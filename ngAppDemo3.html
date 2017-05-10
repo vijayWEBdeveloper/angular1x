@@ -1,0 +1,22 @@
+<!--manual bootstraping of dynamic angular application-->
+
+<html>
+
+
+<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+<div ng-controller="ctrl">
+
+        <h1 style = "color:red">{{var_one}}</h1>
+    </div>
+
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script>
+        var app = angular.module("app", [ ]);
+        app.controller("ctrl",ctrl);
+        ctrl.$inject=["$scope"];
+        function ctrl($scope){
+            $scope.var_one = "iam afrom manual bootstrap";
+        }
+        angular.bootstrap(document,["app"]);
+    </script>
+</html>
